@@ -17,6 +17,7 @@ new Vue({
     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
       .then(function(risposta) {
         console.log(risposta.data.response);
+        // se la mail generata non è inclusa nel mio array che voglio popolare allora la metto dentro l array e la stampo a schermo 
         if (!self.emailGenerate.includes(risposta.data.response)) {
           self.emailGenerate.push(risposta.data.response)
         }
